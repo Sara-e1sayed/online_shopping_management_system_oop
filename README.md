@@ -19,13 +19,6 @@
 
 ## 1. Problem Description
 
-<!--
-اكتبوا هنا 3-5 أسطر بتشرحوا:
-- إيه المشكلة اللي المشروع بيحلها؟
-- مين بيستخدم النظام؟ (Customer, Shop owner)
-- إيه أهم حاجة بيقدر النظام يعملها؟
-مثال تقدروا تعدلوا عليه:
--->
 
 This project simulates a simple **online store backend** using pure Python and Object-Oriented Programming.
 It allows the shop to manage its **products** (physical and digital), organize them into **categories**,
@@ -35,9 +28,7 @@ order when a physical product is out of stock.
 
 ---
 
-## 🧩 2. Classes
-
-<!-- لكل كلاس: سطر أو اتنين بيشرحوا مسؤوليتها. عدلوا الوصف لو غيرتوا حاجة في الكود -->
+## 2. Classes
 
 | Class | Responsibility |
 | ------- | ------- |
@@ -54,9 +45,7 @@ order when a physical product is out of stock.
 
 ---
 
-## 📦 3. Modules
-
-<!-- اتأكدوا إن الأسماء دي مطابقة لأسماء الملفات الفعلية عندكم -->
+## 3. Modules
 
 | Module | Contains |
 | ------- | ------- |
@@ -69,9 +58,7 @@ order when a physical product is out of stock.
 
 ---
 
-## 🔗 4. Relationships
-
-<!-- شرح فعلي لكل علاقة، مش بس جدول تيك. مثال جاهز تعدلوا عليه: -->
+## 4. Relationships
 
 - **`Product` → `Category`**: every product belongs to exactly one category.
 - **`PhysicalProduct` / `DigitalProduct` → `Product`**: both inherit from `Product` and override `get_details()`; `PhysicalProduct` also overrides `is_available()` to check real stock.
@@ -83,136 +70,19 @@ order when a physical product is out of stock.
 
 ---
 
-## ▶️ 5. How to Run the Project
+## 5. How to Run the Project
 
 ```bash
-# from the project's root folder
 python main.py
 ```
 
-No external libraries are required — only the Python standard library.
-
 ---
 
-## 🖥️ 6. Example Output
-
-<!--
-شغلوا main.py وانسخوا جزء من النتيجة هنا (بين ```)
-مثال شكل الحتة اللي المفروض تتحط هنا:
--->
-
-```
---- Products ---
-[101] Wireless Mouse | Price: 350 EGP | Category: Electronics | Type: Physical | Stock: 20 | Shipping: 4.0 EGP
-[102] Python Crash Course (eBook) | Price: 200 EGP | Category: Books | Type: Digital | Format: PDF | Size: 15MB
-
---- Cart for Ahmed ---
-Wireless Mouse x2 = 700 EGP
-Cart Total: 700 EGP
-
---- Order #1 Created ---
-Customer: Ahmed
-Total: 700 EGP
-Status: Placed
-```
-
----
-
-## 🧠 7. OOP Concepts Used
-
-<!-- عدلوا الأمثلة حسب اللي فعليًا عملتوه -->
-
-| Concept | Where it's used |
-| ------- | ------- |
-| **Encapsulation** | Product attributes (price, stock) are only changed through methods like `update_price()`, `update_stock()`, not accessed directly. |
-| **Inheritance** | `PhysicalProduct` and `DigitalProduct` inherit from `Product`; `super().__init__()` is used to reuse the parent constructor. |
-| **Polymorphism** | `is_available()` and `get_details()` behave differently depending on whether the object is a `PhysicalProduct` or a `DigitalProduct`, called the same way from `ShoppingSystem`. |
-| **Composition** | A `Customer` owns one `Cart`; a `Cart` owns its `CartItem` objects — they don't exist independently. |
-| **Modularity** | The system is split across 6 files, each with a clear responsibility, and classes are imported where needed. |
-
----
-
-## 📊 8. Diagrams
-
-<!-- حطوا هنا لينك أو صورة الـ class diagram بعد ما يتظبط خالص -->
-
+## 6. Diagrams
 See `class_diagram.png` in the project folder.
 
----
 
-## 📈 9. Project Progress Tracker
-
-> *For internal team use — update while working. This is not part of the final grading criteria, just to help the team stay organized.*
-
-### Classes
-
-| Task | Status |
-| ------- | ------- |
-| `1.` Category | ⏳ |
-| `2.` Product (base) | ⏳ |
-| `3.` PhysicalProduct | ⏳ |
-| `4.` DigitalProduct | ⏳ |
-| `5.` Customer | ⏳ |
-| `6.` CartItem | ⏳ |
-| `7.` Cart | ⏳ |
-| `8.` OrderItem | ⏳ |
-| `9.` Order | ⏳ |
-| `10.` ShoppingSystem | ⏳ |
-
-### Modules
-
-| Task | Status |
-| ------- | ------- |
-| `1.` models.py | ⏳ |
-| `2.` customers.py | ⏳ |
-| `3.` cart.py | ⏳ |
-| `4.` orders.py | ⏳ |
-| `5.` system.py | ⏳ |
-| `6.` main.py | ⏳ |
-
-### Required System Features
-
-| Task | Status |
-| ------- | ------- |
-| `1.` Create / Register | ⏳ |
-| `2.` Display | ⏳ |
-| `3.` Relationship Operation | ⏳ |
-| `4.` Calculation | ⏳ |
-| `5.` Search | ⏳ |
-| `6.` Update | ⏳ |
-| `7.` Remove / Delete | ⏳ |
-| `8.` Validation | ⏳ |
-
-### main.py Demo Steps
-
-| Task | Status |
-| ------- | ------- |
-| `1.` Import all classes | ⏳ |
-| `2.` Create ShoppingSystem | ⏳ |
-| `3.` Add categories | ⏳ |
-| `4.` Add products (Physical + Digital) | ⏳ |
-| `5.` Add 2+ customers | ⏳ |
-| `6.` Add products to a cart | ⏳ |
-| `7.` Display cart + total | ⏳ |
-| `8.` Create order from cart | ⏳ |
-| `9.` Display order | ⏳ |
-| `10.` Display customer order history | ⏳ |
-| `11.` Cancel one order | ⏳ |
-| `12.` Validation case (out of stock) | ⏳ |
-
-### Documentation & Deliverables
-
-| Task | Status |
-| ------- | ------- |
-| `1.` Code comments added | ⏳ |
-| `2.` Class/Module diagram | ⏳ |
-| `3.` README.md | ⏳ |
-| `4.` Presentation slides | ⏳ |
-| `5.` Working demo tested | ⏳ |
-
----
-
-## 🚫 10. Restrictions Followed
+## 7. Restrictions Followed
 
 ```py
 input()          ❌ not used anywhere

@@ -72,7 +72,6 @@ class Cart:
         self.__items: list[CartItem] = []
 
     # Getter
-
     def get_items(self) -> list[CartItem]:
         return self.__items
 
