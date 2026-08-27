@@ -1,3 +1,5 @@
 .vscode
 .venv
 *pdf
+__pycache__/
+.$system.drawio.bkp
