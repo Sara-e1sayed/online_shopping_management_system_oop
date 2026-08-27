@@ -78,8 +78,8 @@ python main.py
 
 ---
 
-## 6. Diagrams
-See `class_diagram.png` in the project folder.
+## 6. Diagram
+<img src="./images/image.png" alt="Shopping System Diagram" width="800">
 
 
 ## 7. Restrictions Followed
