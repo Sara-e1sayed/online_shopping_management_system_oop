@@ -91,3 +91,19 @@ Flask / Django   ❌ not used
 GUI              ❌ not used
 Authentication   ❌ not used
 ```
+
+## 8. Output Example
+
+see: [output.txt](./output.txt)
+
+## 9. OOP concepts used
+- Classes and Objects
+- Constructors and Attributes
+- Methods
+- Inheritance
+- Relationships between objects
+- Interaction between classes
+- ovverriding methods
+- Encapsulation
+- Polymorphism
+
