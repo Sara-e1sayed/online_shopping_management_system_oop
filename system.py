@@ -128,16 +128,23 @@ class ShoppingSystem:
 
         return False
 
-    def search_product(self, name: str) -> Optional[Product]:
-
-        name_lower = name.lower ()
+    def search_product(
+        self,
+        name: str,
+        min_price: float = 0.0,
+        max_price: float = float('inf')
+    ) -> list[Product]:
+        name_lower = name.lower()
+        results = []
 
         for product in self.__products:
+            if (
+                name_lower in product.get_name().lower() and
+                min_price <= product.get_price() <= max_price
+            ):
+                results.append(product)
 
-            if name_lower in product.get_name().lower():
-                return product
-
-        return None
+        return results
 
     # ---------- Customer management ----------
 
@@ -279,6 +286,41 @@ class ShoppingSystem:
         for order in self.__orders:
             lines.append(order.display_order())
 
+        return "\n".join(lines)
+    #----------- Generates an advanced system analytics report----------
+
+    def generate_system_report(self) -> str:
+        """Generates advanced analytics including total revenue and top spender."""
+        if not self.__orders:
+            return "No orders processed yet."
+
+        total_revenue = 0.0
+        customer_spending: dict[str, float] = {}
+
+        for order in self.__orders:
+            if order.get_status() == Order.STATUS_CANCELLED:
+                continue
+                
+            o_total = order.get_total()
+            c_name = order.get_customer().get_name()
+            
+            total_revenue += o_total
+            customer_spending[c_name] = customer_spending.get(c_name, 0.0) + o_total
+
+        top_customer = max(customer_spending, key=customer_spending.get) if customer_spending else "None"
+        top_spending = customer_spending.get(top_customer, 0.0)
+
+        lines = [
+            "\n" + "=" * 80,
+            "  SMART SYSTEM ANALYTICS REPORT (Added by System Engineer)",
+            "=" * 80,
+            f"Total Registered Customers : {len(self.__customers)}",
+            f"Total Products in Catalog  : {len(self.__products)}",
+            f"Total Orders Processed   : {len(self.__orders)}",
+            f"Total Valid Revenue      : ${total_revenue:,.2f}",
+            f"Top Spender              : {top_customer} (${top_spending:,.2f})",
+            "=" * 80
+        ]
         return "\n".join(lines)
 
     # ---------- Internal helpers ----------
