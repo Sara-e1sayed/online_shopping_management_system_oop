@@ -7,18 +7,21 @@ Defines the ShoppingSystem class.
 
 from typing import Optional
 
-from models import (
-    Category,
-    Product,
-    PhysicalProduct
-)
-
+from models import Category, Product, Product, PhysicalProduct
 from customers import Customer
 from orders import Order, OrderItem
 
 
 class ShoppingSystem:
-    """Central system coordinating the whole application."""
+    """
+    # Central system coordinating the whole application
+    ## Attributes:
+    - categories: List of all product categories
+    - products: List of all products in the catalog
+    - customers: List of all registered customers
+    - orders: List of all orders placed in the system
+    - next_order_id: Counter for generating unique order IDs
+    """
 
     def __init__(self):
 
@@ -170,7 +173,7 @@ class ShoppingSystem:
 
     # ---------- Order management ----------
 
-    def create_order(
+    def create_order (
         self,
         customer_id: int
     ) -> tuple[Optional[Order], str]:

@@ -198,39 +198,40 @@ def main():
 
     banner("STEP 3 - CUSTOMERS")
 
-    alice = Customer(
+    ahmed = Customer(
         1,
-        "Alice Johnson",
-        "alice@example.com",
+        "Ahmed",
+        "ahmed@example.com",
         "555-1001"
     )
 
-    bob = Customer(
+    sara = Customer(
         2,
-        "Bob Smith",
-        "bob@example.com",
+        "Sara",
+        "sara@example.com",
         "555-1002"
     )
 
-    charlie = Customer(
+    kareem = Customer(
         3,
-        "Charlie Brown",
-        "charlie@example.com",
+        "Kareem Hesham",
+        "kareem@example.com",
         "555-1003"
     )
 
-    diana = Customer(
+    rofaida = Customer(
         4,
-        "Diana Wilson",
-        "diana@example.com",
+        "Rofaida Samy",
+        "rofaida@example.com",
         "555-1004"
     )
 
+
     customers = (
-        alice,
-        bob,
-        charlie,
-        diana
+        ahmed,
+        sara,
+        kareem,
+        rofaida
     )
 
     for customer in customers:
@@ -253,35 +254,35 @@ def main():
 
     banner("STEP 4 - SHOPPING CARTS")
 
-    # Alice
-    alice.add_to_cart(laptop, 1)
-    alice.add_to_cart(headphones, 2)
-    alice.add_to_cart(python_course, 1)
+    # Ahmed
+    ahmed.add_to_cart(laptop, 1)
+    ahmed.add_to_cart(headphones, 2)
+    ahmed.add_to_cart(python_course, 1)
 
-    # Bob
-    bob.add_to_cart(phone, 1)
-    bob.add_to_cart(keyboard, 2)
-    bob.add_to_cart(ml_guide, 1)
+    # Ahmed
+    sara.add_to_cart(phone, 1)
+    sara.add_to_cart(keyboard, 2)
+    sara.add_to_cart(ml_guide, 1)
 
-    # Charlie
-    charlie.add_to_cart(python_book, 2)
-    charlie.add_to_cart(python_course, 1)
+    # Kareem
+    kareem.add_to_cart(python_book, 2)
+    kareem.add_to_cart(python_course, 1)
 
-    # Diana
-    diana.add_to_cart(headphones, 3)
-    diana.add_to_cart(deep_learning_course, 1)
+    # Rofaida
+    rofaida.add_to_cart(headphones, 3)
+    rofaida.add_to_cart(deep_learning_course, 1)
 
-    section("Alice's Cart")
-    print(alice.get_cart().display_cart())
+    section("Ahmed's Cart")
+    print(ahmed.get_cart().display_cart())
 
-    section("Bob's Cart")
-    print(bob.get_cart().display_cart())
+    section("Sara's Cart")
+    print(sara.get_cart().display_cart())
 
-    section("Charlie's Cart")
-    print(charlie.get_cart().display_cart())
+    section("Kareem's Cart")
+    print(kareem.get_cart().display_cart())
 
-    section("Diana's Cart")
-    print(diana.get_cart().display_cart())
+    section("Rofaida's Cart")
+    print(rofaida.get_cart().display_cart())
 
 
     # ========================================================
@@ -290,24 +291,24 @@ def main():
 
     banner("STEP 5 - CART OPERATIONS")
 
-    section("Update Alice's Cart")
+    section("Update Ahmed's Cart")
 
-    alice.get_cart().update_item_quantity(
+    ahmed.get_cart().update_item_quantity(
         headphones.get_product_id(),
         3
     )
 
     print("Wireless Headphones quantity changed to 3.")
 
-    print(alice.get_cart().display_cart())
+    print(ahmed.get_cart().display_cart())
 
-    section("Remove Bob's Keyboard")
+    section("Remove Sara's Keyboard")
 
-    bob.remove_from_cart(
+    sara.remove_from_cart(
         keyboard.get_product_id()
     )
 
-    print(bob.get_cart().display_cart())
+    print(sara.get_cart().display_cart())
 
 
     # ========================================================
@@ -321,7 +322,7 @@ def main():
         "python",
         "headphones",
         "machine",
-        "unknown"
+        "bla_bla_bla"
     )
 
     for term in search_terms:
@@ -418,7 +419,7 @@ def main():
         available = product.is_available(quantity)
 
         print(
-            f"{product.get_name():30}"
+            f"{product.get_name ():30}"
             f" | Requested: {quantity:3}"
             f" | Available: {available}"
         )
@@ -428,31 +429,31 @@ def main():
     # STEP 10 - Create Orders
     # ========================================================
 
-    banner("STEP 10 - CREATE ORDERS")
+    banner ("STEP 10 - CREATE ORDERS")
 
-    alice_order, alice_msg = system.create_order(
-        alice.get_customer_id()
+    ahmed_order, ahmed_msg = system.create_order(
+        ahmed.get_customer_id()
     )
 
-    bob_order, bob_msg = system.create_order(
-        bob.get_customer_id()
+    sara_order, sara_msg = system.create_order(
+        sara.get_customer_id()
     )
 
-    charlie_order, charlie_msg = system.create_order(
-        charlie.get_customer_id()
+    kareem_order, kareem_msg = system.create_order(
+        kareem.get_customer_id()
     )
 
-    diana_order, diana_msg = system.create_order(
-        diana.get_customer_id()
+    rofaida_order, rofaida_msg = system.create_order(
+        rofaida.get_customer_id()
     )
 
     section("Created Orders")
 
     orders = (
-        alice_order,
-        bob_order,
-        charlie_order,
-        diana_order
+        ahmed_order,
+        sara_order,
+        kareem_order,
+        rofaida_order
     )
 
     for order in orders:
@@ -508,16 +509,16 @@ def main():
 
     banner("STEP 13 - CANCEL ORDER")
 
-    if alice_order:
+    if ahmed_order:
 
         print(
-            f"Order #{alice_order.get_order_id()} "
+            f"Order #{ahmed_order.get_order_id()} "
             f"before cancellation:"
         )
 
         print(
             f"  Status: "
-            f"{alice_order.get_status()}"
+            f"{ahmed_order.get_status()}"
         )
 
         print(
@@ -526,19 +527,19 @@ def main():
         )
 
         cancelled, cancel_msg = system.cancel_order(
-            alice_order.get_order_id()
+            ahmed_order.get_order_id()
         )
 
         print(f"\n{cancel_msg}")
 
         print(
-            f"\nOrder #{alice_order.get_order_id()} "
+            f"\nOrder #{ahmed_order.get_order_id()} "
             f"after cancellation:"
         )
 
         print(
             f"  Status: "
-            f"{alice_order.get_status()}"
+            f"{ahmed_order.get_status()}"
         )
 
         print(
@@ -582,19 +583,19 @@ def main():
 
     section("Attempt to remove a product still in a pending order")
 
-    # Bob's order (still pending) contains the phone, so this must
+    # Ahmed's order (still pending) contains the phone, so this must
     # be refused to avoid leaving a pending order pointing at a
     # deleted product.
     blocked = system.remove_product(phone.get_product_id())
     print(
         f"Remove '{phone.get_name()}' "
-        f"(referenced in {bob.get_name()}'s pending order): "
+        f"(referenced in {sara.get_name()}'s pending order): "
         f"{'removed' if blocked else 'blocked'}"
     )
 
     section("Remove a product that was never ordered")
 
-    # The keyboard was taken out of Bob's cart before checkout, so
+    # The keyboard was taken out of Ahmed's cart before checkout, so
     # it never ended up in any order and can be removed freely.
     allowed = system.remove_product(keyboard.get_product_id())
     print(

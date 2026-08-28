@@ -231,6 +231,9 @@ class PhysicalProduct(Product):
     # Methods
 
     def update_stock(self, quantity: int) -> None:
+        """
+        + quantity: The number of items to add (positive) or remove (negative) from stock.
+        """
         new_stock = self.__stock_quantity + quantity
 
         if new_stock < 0:

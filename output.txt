@@ -32,36 +32,36 @@
 ================================================================================
 
 --- Registered Customers ---
-[1] Alice Johnson | alice@example.com | 555-1001
-[2] Bob Smith | bob@example.com | 555-1002
-[3] Charlie Brown | charlie@example.com | 555-1003
-[4] Diana Wilson | diana@example.com | 555-1004
+[1] Ahmed | ahmed@example.com | 555-1001
+[2] Sara | sara@example.com | 555-1002
+[3] Kareem Hesham | kareem@example.com | 555-1003
+[4] Rofaida Samy | rofaida@example.com | 555-1004
 
 ================================================================================
   STEP 4 - SHOPPING CARTS
 ================================================================================
 
---- Alice's Cart ---
+--- Ahmed's Cart ---
 Cart contents:
   - Gaming Laptop x1 = $1499.99
   - Wireless Headphones x2 = $299.98
   - Python Programming Course x1 = $29.99
 Total: $1829.96
 
---- Bob's Cart ---
+--- Sara's Cart ---
 Cart contents:
   - Smartphone x1 = $799.99
   - Mechanical Keyboard x2 = $179.98
   - Machine Learning Guide x1 = $24.99
 Total: $1004.96
 
---- Charlie's Cart ---
+--- Kareem's Cart ---
 Cart contents:
   - Python Programming Book x2 = $119.98
   - Python Programming Course x1 = $29.99
 Total: $149.97
 
---- Diana's Cart ---
+--- Rofaida's Cart ---
 Cart contents:
   - Wireless Headphones x3 = $449.97
   - Deep Learning Course x1 = $39.99
@@ -71,7 +71,7 @@ Total: $489.96
   STEP 5 - CART OPERATIONS
 ================================================================================
 
---- Update Alice's Cart ---
+--- Update Ahmed's Cart ---
 Wireless Headphones quantity changed to 3.
 Cart contents:
   - Gaming Laptop x1 = $1499.99
@@ -79,7 +79,7 @@ Cart contents:
   - Python Programming Course x1 = $29.99
 Total: $1979.95
 
---- Remove Bob's Keyboard ---
+--- Remove Sara's Keyboard ---
 Cart contents:
   - Smartphone x1 = $799.99
   - Machine Learning Guide x1 = $24.99
@@ -96,7 +96,7 @@ Search: 'headphones'
   Found: ID: 103 | Name: Wireless Headphones | Price: $149.99 | Category: Accessories | Physical | Stock: 30 | Weight: 0.3kg
 Search: 'machine'
   Found: ID: 202 | Name: Machine Learning Guide | Price: $24.99 | Category: E-Books | Digital | Format: PDF | Size: 12.8MB
-Search: 'unknown'
+Search: 'bla_bla_bla'
   No product found.
 
 ================================================================================
@@ -130,29 +130,29 @@ Machine Learning Guide         | Requested:   1 | Available: True
 ================================================================================
 
 --- Created Orders ---
-Order #1   | Customer: Alice Johnson   | Total: $ 1919.95 | Status: pending
-Order #2   | Customer: Bob Smith       | Total: $  824.98 | Status: pending
-Order #3   | Customer: Charlie Brown   | Total: $  149.97 | Status: pending
-Order #4   | Customer: Diana Wilson    | Total: $  429.96 | Status: pending
+Order #1   | Customer: Ahmed           | Total: $ 1919.95 | Status: pending
+Order #2   | Customer: Sara            | Total: $  824.98 | Status: pending
+Order #3   | Customer: Kareem Hesham   | Total: $  149.97 | Status: pending
+Order #4   | Customer: Rofaida Samy    | Total: $  429.96 | Status: pending
 
 ================================================================================
   STEP 11 - ORDER DETAILS
 ================================================================================
 Orders:
-Order #1 - Customer: Alice Johnson - Status: pending
+Order #1 - Customer: Ahmed - Status: pending
   - Gaming Laptop x1 @ $1499.99 = $1499.99
   - Wireless Headphones x3 @ $129.99 = $389.97
   - Python Programming Course x1 @ $29.99 = $29.99
 Total: $1919.95
-Order #2 - Customer: Bob Smith - Status: pending
+Order #2 - Customer: Sara - Status: pending
   - Smartphone x1 @ $799.99 = $799.99
   - Machine Learning Guide x1 @ $24.99 = $24.99
 Total: $824.98
-Order #3 - Customer: Charlie Brown - Status: pending
+Order #3 - Customer: Kareem Hesham - Status: pending
   - Python Programming Book x2 @ $59.99 = $119.98
   - Python Programming Course x1 @ $29.99 = $29.99
 Total: $149.97
-Order #4 - Customer: Diana Wilson - Status: pending
+Order #4 - Customer: Rofaida Samy - Status: pending
   - Wireless Headphones x3 @ $129.99 = $389.97
   - Deep Learning Course x1 @ $39.99 = $39.99
 Total: $429.96
@@ -183,16 +183,16 @@ Order #1 after cancellation:
   STEP 14 - ORDER HISTORY
 ================================================================================
 
-Alice Johnson
+Ahmed
   Order #1 | Status: cancelled | Total: $1919.95
 
-Bob Smith
+Sara
   Order #2 | Status: pending | Total: $824.98
 
-Charlie Brown
+Kareem Hesham
   Order #3 | Status: pending | Total: $149.97
 
-Diana Wilson
+Rofaida Samy
   Order #4 | Status: pending | Total: $429.96
 
 ================================================================================
@@ -200,7 +200,7 @@ Diana Wilson
 ================================================================================
 
 --- Attempt to remove a product still in a pending order ---
-Remove 'Smartphone' (referenced in Bob Smith's pending order): blocked
+Remove 'Smartphone' (referenced in Sara's pending order): blocked
 
 --- Remove a product that was never ordered ---
 Remove 'Mechanical Keyboard' (never part of an order): removed
