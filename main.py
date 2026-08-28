@@ -315,35 +315,25 @@ def main():
     # STEP 6 - Product Search
     # ========================================================
 
-    banner("STEP 6 - PRODUCT SEARCH")
+   banner("STEP 6 - ADVANCED PRODUCT SEARCH")
 
     search_terms = (
-        "laptop",
-        "python",
-        "headphones",
-        "machine",
-        "bla_bla_bla"
+        ("laptop", 0.0, 2000.0),
+        ("python", 0.0, 50.0),
+        ("headphones", 100.0, 140.0),
+        ("machine", 0.0, 10.0),
+        ("bla_bla_bla", 0.0, 1000.0)
     )
 
-    for term in search_terms:
-
-        result = system.search_product(term)
-
-        if result:
-            print(
-                f"Search: '{term}'"
-            )
-            print(
-                f"  Found: {result.get_details()}"
-            )
+    for term, min_p, max_p in search_terms:
+        results = system.search_product(term, min_price=min_p, max_price=max_p)
+        print(f"Search: '{term}' (Price: ${min_p} - ${max_p})")
+        
+        if results:
+            for result in results:
+                print(f"  Found: {result.get_details()}")
         else:
-            print(
-                f"Search: '{term}'"
-            )
-            print(
-                "  No product found."
-            )
-
+            print("  No product found matching criteria.")
 
     # ========================================================
     # STEP 7 - Update Product
@@ -611,21 +601,12 @@ def main():
 
     banner("STEP 16 - SYSTEM SUMMARY")
 
-    print(
-        f"Categories : {len(system.get_categories())}"
-    )
+    print(f"Categories : {len(system.get_categories())}")
+    print(f"Products   : {len(system.get_products())}")
+    print(f"Customers  : {len(system.get_customers())}")
+    print(f"Orders     : {len(system.get_orders())}")
 
-    print(
-        f"Products   : {len(system.get_products())}"
-    )
-
-    print(
-        f"Customers  : {len(system.get_customers())}"
-    )
-
-    print(
-        f"Orders     : {len(system.get_orders())}"
-    )
+    print(system.generate_system_report())
 
 
     # ========================================================
