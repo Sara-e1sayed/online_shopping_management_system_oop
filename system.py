@@ -74,15 +74,10 @@ class ShoppingSystem:
 
         self.__products.append(product)
 
-    def remove_product(
-        self,
-        product_id: int
-    ) -> bool:
-        """Remove a product from the catalog.
+    def remove_product(self, product_id: int) -> bool:
+        """Remove a product from the catalog
 
-        Refuses to remove a product that is still referenced by a
-        pending order, so historical/active orders never end up
-        pointing at a deleted product.
+        Refuses to remove a product that is still referenced by a pending order
         """
 
         for order in self.__orders:
@@ -105,18 +100,11 @@ class ShoppingSystem:
 
         return False
 
-    def update_product(
-        self,
-        product_id: int,
-        **kwargs
-    ) -> bool:
+    def update_product (self, product_id: int, **kwargs) -> bool:
 
         for product in self.__products:
 
-            if (
-                product.get_product_id()
-                != product_id
-            ):
+            if product.get_product_id() != product_id:
                 continue
 
             for key, value in kwargs.items():
@@ -140,29 +128,20 @@ class ShoppingSystem:
 
         return False
 
-    def search_product(
-        self,
-        name: str
-    ) -> Optional[Product]:
+    def search_product(self, name: str) -> Optional[Product]:
 
-        name_lower = name.lower()
+        name_lower = name.lower ()
 
         for product in self.__products:
 
-            if (
-                name_lower
-                in product.get_name().lower()
-            ):
+            if name_lower in product.get_name().lower():
                 return product
 
         return None
 
     # ---------- Customer management ----------
 
-    def register_customer(
-        self,
-        customer: Customer
-    ) -> None:
+    def register_customer(self, customer: Customer) -> None:
 
         if not isinstance(customer, Customer):
             raise ValueError(
